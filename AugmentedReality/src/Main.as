@@ -25,7 +25,8 @@ package
 	
 	/**
 	 * ...
-	 * @author Harsh Patel
+	 * @author Harsh Patel 
+	   @authormax : Mohit Kumar
 	 */
 	public class Main extends Sprite 
 	{
