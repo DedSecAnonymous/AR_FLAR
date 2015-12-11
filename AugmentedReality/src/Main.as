@@ -21,18 +21,15 @@ package
 	import org.papervision3d.render.BasicRenderEngine;
 	import org.papervision3d.scenes.Scene3D;
 	import org.papervision3d.view.Viewport3D;
-<<<<<<< HEAD
 	import org.papervision3d.objects.*;
-=======
 	import org.papervision3d.objects.primitives.*
->>>>>>> origin/master
 	
 	[SWF(width = "640", height = "480", frameRate = "30", backgroundColor = "#FFFFFF")]
 	
 	/**
 	 * ...
 	 * @author Harsh Patel 
-	   @authormax : Mohit Kumar
+	   @author Mohit Kumar
 	 */
 	public class Main extends Sprite 
 	{
@@ -55,13 +52,10 @@ package
 		private var vp:Viewport3D;
 		private var bre:BasicRenderEngine;
 		private var trans:FLARTransMatResult;
-<<<<<<< HEAD
 		private var col:Collada;
 		
-=======
 		private var cube1:Cube;
 		private var paperPlane:PaperPlane;
->>>>>>> origin/master
 		
 		public function Main() 
 		{
@@ -121,7 +115,7 @@ package
 			//var cube3:Cube = new Cube(ml, 30, 30, 30);
 			//cube3.z = 100;
 			
-			paperPlane = new PaperPlane(null,3);
+			//paperPlane = new PaperPlane(null,3);
 			
 			/*container.addChild(cube1);
 			container.addChild(cube2);
