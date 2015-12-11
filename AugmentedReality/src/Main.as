@@ -123,7 +123,6 @@ package
 			
 			paperPlane = new PaperPlane(null,3);
 			
-<<<<<<< HEAD
 			/*container.addChild(cube1);
 			container.addChild(cube2);
 			container.addChild(cube3);*/
@@ -134,13 +133,11 @@ package
 			//col.rotationZ -= 90;
 			container.addChild(col);
 			
-=======
 			//container.addChild(cube1);
 			//container.addChild(cube2);
 			//container.addChild(cube3);
-			container.addChild(paperPlane);
-			trace(paperPlane.boundingBox().size);
->>>>>>> origin/master
+			/*container.addChild(paperPlane);
+			trace(paperPlane.boundingBox().size);*/
 			
 			bre = new BasicRenderEngine();
 			trans = new FLARTransMatResult();
@@ -161,7 +158,7 @@ package
 					detector.getTransformMatrix(trans);
 					container.setTransformMatrix(trans);
 					//paperPlane.localRotationZ +=1;
-					trace(paperPlane.boundingBox().size);
+					//trace(paperPlane.boundingBox().size);
 					bre.renderScene(scene, camera, vp);
 				}
 			}
