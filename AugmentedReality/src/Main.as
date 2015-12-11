@@ -20,6 +20,7 @@ package
 	import org.papervision3d.render.BasicRenderEngine;
 	import org.papervision3d.scenes.Scene3D;
 	import org.papervision3d.view.Viewport3D;
+	import org.papervision3d.objects.primitives.*
 	
 	[SWF(width = "640", height = "480", frameRate = "30", backgroundColor = "#FFFFFF")]
 	
@@ -49,12 +50,14 @@ package
 		private var vp:Viewport3D;
 		private var bre:BasicRenderEngine;
 		private var trans:FLARTransMatResult;
-		
+		private var cube1:Cube;
+		private var paperPlane:PaperPlane;
 		
 		public function Main() 
 		{
 			/*if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);*/
+			stage.frameRate = 40;
 			setupFLAR();
 			setupCamera();
 			setupBitmap();
@@ -102,15 +105,19 @@ package
 			
 			var ml:MaterialsList = new MaterialsList( { all:new FlatShadeMaterial(pl) } );
 			
-			var cube1:Cube = new Cube(ml, 30, 30, 30);
-			var cube2:Cube = new Cube(ml, 30, 30, 30);
-			cube2.z = 50;
-			var cube3:Cube = new Cube(ml, 30, 30, 30);
-			cube3.z = 100;
+			//cube1 = new Cube(ml, 30, 30, 30);
+			//var cube2:Cube = new Cube(ml, 30, 30, 30);
+			//cube2.z = 50;
+			//var cube3:Cube = new Cube(ml, 30, 30, 30);
+			//cube3.z = 100;
 			
-			container.addChild(cube1);
-			container.addChild(cube2);
-			container.addChild(cube3);
+			paperPlane = new PaperPlane(null,3);
+			
+			//container.addChild(cube1);
+			//container.addChild(cube2);
+			//container.addChild(cube3);
+			container.addChild(paperPlane);
+			trace(paperPlane.boundingBox().size);
 			
 			bre = new BasicRenderEngine();
 			trans = new FLARTransMatResult();
@@ -123,12 +130,15 @@ package
 		private function loop(e:Event):void
 		{
 			bmd.draw(vid);
+			
 			try
 			{
 				if (detector.detectMarkerLite(raster, 80) && detector.getConfidence() > 0.5)
 				{
 					detector.getTransformMatrix(trans);
 					container.setTransformMatrix(trans);
+					//paperPlane.localRotationZ +=1;
+					trace(paperPlane.boundingBox().size);
 					bre.renderScene(scene, camera, vp);
 				}
 			}
