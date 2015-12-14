@@ -1,5 +1,7 @@
 package
 {
+	import com.oskarwicha.images.FaceDetection.FaceDetector;
+	import com.oskarwicha.images.FaceDetection.Events.FaceDetectorEvent;
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -25,6 +27,7 @@ package
 	import org.papervision3d.view.Viewport3D;
 	import org.papervision3d.objects.parsers.Collada;
     import org.papervision3d.objects.parsers.DAE;
+	
 
 	
 	[SWF(width = "640", height = "480", frameRate = "30", backgroundColor = "#FFFFFF")]
@@ -59,8 +62,8 @@ package
 		private var dae:DAE;
 		private var _collada:Collada;
 	    private var _dae:DAE;
-		
 		private var cube1:Cube;
+		private var fd:FaceDetector;
 		//private var paperPlane:PaperPlane;
 		
 		public function Main() 
@@ -134,12 +137,16 @@ package
 			container.addChild(col);*/
 			
 			dae = new DAE();
-			dae.load("animatedMill/animatedMill.dae");
-			dae.scale = 0.5;
-			dae.rotationX += 0;
-			dae.rotationY += 180;
-			//dae.rotationZ -= 180;
+			dae.load("expermnt_dae.dae");
+			dae.rotationZ -= 180;
+			dae.rotationX += 90;
+			dae.rotationY -= 90;
+			dae.x  = -75;
+			dae.y = 100;
 			container.addChild(dae);
+			
+			
+			
 			/*
 			col = new Sketchup("gl.skp");
 			col.scale = 0.5;
