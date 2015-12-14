@@ -32,13 +32,21 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
+<<<<<<< HEAD
       <path-element>C:\Users\harsh\Documents\GitHub\AR_FLAR\AugmentedReality\src</path-element>
+=======
+      <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\AugmentedReality\src</path-element>
+>>>>>>> origin/master
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
   <file-specs>
+<<<<<<< HEAD
     <path-element>C:\Users\harsh\Documents\GitHub\AR_FLAR\AugmentedReality\src\Main.as</path-element>
+=======
+    <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\AugmentedReality\src\Main.as</path-element>
+>>>>>>> origin/master
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
