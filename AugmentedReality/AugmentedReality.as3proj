@@ -53,7 +53,10 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="lib\as3corelib.swc" />
+    <element path="lib\away3d-core-fp11_4_1_6.swc" />
+    <element path="lib\BRF_NXT_SWC_TK200215_v3.0.16_trial.swc" />
+    <element path="lib\Flare3D_2.7.1_Trial.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

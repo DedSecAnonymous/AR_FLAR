@@ -25,6 +25,9 @@ package
 	import org.papervision3d.view.Viewport3D;
 	import org.papervision3d.objects.parsers.Collada;
     import org.papervision3d.objects.parsers.DAE;
+	import org.papervision3d.view.BasicView;
+	
+	
 
 	
 	[SWF(width = "640", height = "480", frameRate = "30", backgroundColor = "#FFFFFF")]
@@ -59,6 +62,7 @@ package
 		private var dae:DAE;
 		private var _collada:Collada;
 	    private var _dae:DAE;
+		private var basic_view:BasicView;
 		
 		private var cube1:Cube;
 		//private var paperPlane:PaperPlane;
@@ -67,6 +71,10 @@ package
 		{
 			/*if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);*/
+			////stage.scaleX *= -1;
+			//basic_view.scaleX *= -1;
+			//basic_view.x = basic_view.width;
+			/////stage.x = stage.width;
 			stage.frameRate = 40;
 			setupFLAR();
 			setupCamera();
@@ -88,6 +96,8 @@ package
 			vid = new Video(640, 480);
 			cam = Camera.getCamera();
 			cam.setMode(640, 480, 30);
+			//vid.scaleX *= -1;
+            //vid.x = vid.width;
 			vid.attachCamera(cam);
 			addChild(vid);
 		}
@@ -134,12 +144,17 @@ package
 			container.addChild(col);*/
 			
 			dae = new DAE();
-			dae.load("animatedMill/animatedMill.dae");
-			dae.scale = 0.5;
-			dae.rotationX += 0;
-			dae.rotationY += 180;
+			dae.load("expermnt_dae.dae");
+			dae.scale = 0.85;
+			dae.rotationZ -= 180;
+			dae.rotationX += 90;
+			dae.rotationY -= 100;
+			dae.x = -75;
+			dae.y = 60;
 			//dae.rotationZ -= 180;
 			container.addChild(dae);
+		
+            
 			/*
 			col = new Sketchup("gl.skp");
 			col.scale = 0.5;
@@ -173,6 +188,8 @@ package
 		private function loop(e:Event):void
 		{
 			bmd.draw(vid);
+			
+			
 			
 			try
 			{
