@@ -16,13 +16,14 @@ package
 	import org.papervision3d.lights.PointLight3D;
 	import org.papervision3d.materials.shadematerials.FlatShadeMaterial;
 	import org.papervision3d.materials.utils.MaterialsList;
-	import org.papervision3d.objects.parsers.Collada;
+	import org.papervision3d.objects.parsers.Sketchup;
 	import org.papervision3d.objects.primitives.Cube;
 	import org.papervision3d.render.BasicRenderEngine;
 	import org.papervision3d.scenes.Scene3D;
 	import org.papervision3d.view.Viewport3D;
-	import org.papervision3d.objects.*;
-	import org.papervision3d.objects.primitives.*
+	import org.papervision3d.objects.parsers.Collada;
+    import org.papervision3d.objects.parsers.DAE;
+
 	
 	[SWF(width = "640", height = "480", frameRate = "30", backgroundColor = "#FFFFFF")]
 	
@@ -52,10 +53,12 @@ package
 		private var vp:Viewport3D;
 		private var bre:BasicRenderEngine;
 		private var trans:FLARTransMatResult;
-		private var col:Collada;
+		private var _collada:Collada;
+	    private var _dae:DAE;
+		
 		
 		private var cube1:Cube;
-		private var paperPlane:PaperPlane;
+		//private var paperPlane:PaperPlane;
 		
 		public function Main() 
 		{
@@ -120,13 +123,23 @@ package
 			/*container.addChild(cube1);
 			container.addChild(cube2);
 			container.addChild(cube3);*/
-			
-			col = new Collada("cow.dae");
+			/*
+			col = new Sketchup("gl.skp");
 			col.scale = 0.5;
 			col.y = 75;
 			//col.rotationZ -= 90;
 			container.addChild(col);
+			*/
 			
+			_dae = new DAE();
+		    _dae.load("expermnt_dae.dae");
+		    _dae.rotationZ -= 180;
+			_dae.rotationX += 90;
+			_dae.rotationY -= 90;
+			_dae.x  = -75;
+			_dae.y = 60;
+		    container.addChild(_dae);
+		
 			//container.addChild(cube1);
 			//container.addChild(cube2);
 			//container.addChild(cube3);
