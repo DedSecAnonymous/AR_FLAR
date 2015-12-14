@@ -17,6 +17,7 @@ package
 	import org.papervision3d.materials.shadematerials.FlatShadeMaterial;
 	import org.papervision3d.materials.utils.MaterialsList;
 	import org.papervision3d.objects.parsers.Collada;
+	import org.papervision3d.objects.parsers.DAE;
 	import org.papervision3d.objects.primitives.Cube;
 	import org.papervision3d.render.BasicRenderEngine;
 	import org.papervision3d.scenes.Scene3D;
@@ -53,6 +54,7 @@ package
 		private var bre:BasicRenderEngine;
 		private var trans:FLARTransMatResult;
 		private var col:Collada;
+		private var dae:DAE;
 		
 		private var cube1:Cube;
 		private var paperPlane:PaperPlane;
@@ -121,11 +123,19 @@ package
 			container.addChild(cube2);
 			container.addChild(cube3);*/
 			
-			col = new Collada("cow.dae");
+			/*col = new Collada("cow.dae");
 			col.scale = 0.5;
 			col.y = 75;
 			//col.rotationZ -= 90;
-			container.addChild(col);
+			container.addChild(col);*/
+			
+			dae = new DAE();
+			dae.load("animatedMill/animatedMill.dae");
+			dae.scale = 0.5;
+			dae.rotationX += 0;
+			dae.rotationY += 180;
+			//dae.rotationZ -= 180;
+			container.addChild(dae);
 			
 			//container.addChild(cube1);
 			//container.addChild(cube2);
