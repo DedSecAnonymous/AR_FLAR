@@ -16,8 +16,8 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="..\..\..\NXT_FACE_TRACK\BRF_NXT_AS3_EXAMPLES\src" />
-    <class path="..\..\..\NXT_FACE_TRACK\BRF_NXT_AS3_EXAMPLES\src_3dengine_extensions" />
+    <class path="..\..\..\..\Downloads\BRF_NXT_AS3_EXAMPLES\src" />
+    <class path="..\..\..\..\Downloads\BRF_NXT_AS3_EXAMPLES\src_3dengine_extensions" />
   </classpaths>
   <!-- Build options -->
   <build>

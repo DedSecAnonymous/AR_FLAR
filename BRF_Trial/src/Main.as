@@ -3,6 +3,7 @@ package
 	import com.tastenkunst.as3.brf.nxt.BRFState;
 	import com.tastenkunst.as3.brf.nxt.containers.Flare3D_v2_7;
 	import com.tastenkunst.as3.brf.nxt.examples.ExampleCandideTracking;
+	import flash.display.Bitmap;
 
 	import flash.display.BitmapData;
 	import flash.events.Event;
@@ -40,25 +41,37 @@ package
 		
 		// texture for webcam image as 3d plane
 		public var _screenBmd : BitmapData;
-
-		public function Main() {
-//			//
-//			// 480p version:
-//			//
-//
-//			// set the viewport size and position
-//			_viewport = new Rectangle(0, 0, 640, 480);
-//			
-//			// and the other rectangles (see ExampleBase for more information)
-//			super(
-//				new Rectangle(  0,   0,  640, 480),	// Camera resolution
-//				new Rectangle(  0,   0,  640, 480), // BRF BitmapData size
-//				new Rectangle( 80,   0,  480, 480), // BRF region of interest within BRF BitmapData size
-//				new Rectangle(120,  40,  400, 400), // BRF face detection region of interest within BRF BitmapData size
-//				new Rectangle(  0,   0,  640, 480), // Shown video screen rectangle within the 3D scene
-//				true, true
-//			);
+		
+		[Embed(source = "logo_hack.png")]
+		private var logo:Class;
+		
+		private var logobmp:Bitmap = new logo();
+		
+		private function hack():void
+		{
+			graphics.beginBitmapFill(logobmp.bitmapData);
+			graphics.drawRect(0, 0, 221, 196);
+			graphics.endFill();
+		}
+		public function Main() 
+		{
+			/*
+			//
+			// 480p version:
+			//
+			// set the viewport size and position
+			_viewport = new Rectangle(0, 0, 640, 480);
 			
+			// and the other rectangles (see ExampleBase for more information)
+			super(
+				new Rectangle(  0,   0,  640, 480),	// Camera resolution
+				new Rectangle(  0,   0,  640, 480), // BRF BitmapData size
+				new Rectangle( 80,   0,  480, 480), // BRF region of interest within BRF BitmapData size
+				new Rectangle(120,  40,  400, 400), // BRF face detection region of interest within BRF BitmapData size
+				new Rectangle(  0,   0,  640, 480), // Shown video screen rectangle within the 3D scene
+				true, true
+			);
+			*/
 			//
 			// 720p version
 			//
@@ -81,7 +94,9 @@ package
 		 * BRF is ready. Lets set the tracking mode to BRFMode.FACE_TRACKING.
 		 * and init all necessary stuff for Flare3D.
 		 */
-		override public function onReadyBRF(event : Event) : void {
+		override public function onReadyBRF(event : Event) : void 
+		{
+			hack();
 			super.onReadyBRF(event);
 			
 			// visible webcam image
@@ -120,7 +135,8 @@ package
 		/**
 		 * We need to draw the webcam to the texture BitmapData.
 		 */
-		override public function updateInput() : void {
+		override public function updateInput() : void 
+		{
 			super.updateInput();
 			
 			_screenBmd.draw(_video, _videoToScreenMatrix);
@@ -130,16 +146,17 @@ package
 		 * Update the 3D content, if a face shape was tracked.
 		 * Otherwise hide the 3D content.
 		 */
-		override public function updateGUI() : void {
+		override public function updateGUI() : void 
+		{
 			_draw.clear();
 			
 			if(_brfManager.state == BRFState.FACE_TRACKING) {
 				// Draw the underlaying shape (optinal):
-//				var faceShape : BRFFaceShape = _brfManager.faceShape;
-//				DrawingUtils.drawTriangles(_draw, faceShape.candideShapeVertices, faceShape.candideShapeTriangles, 
-//						false, 1.0, 0xffff00, 0.25, 0xffff00, 0.0);
-//				DrawingUtils.drawPoint(_draw, new Point(faceShape.translationX, faceShape.translationY), 2, false, 0x00ff00, 0.25);
-				
+				/*var faceShape : BRFFaceShape = _brfManager.faceShape;
+				DrawingUtils.drawTriangles(_draw, faceShape.candideShapeVertices, faceShape.candideShapeTriangles, 
+						false, 1.0, 0xffff00, 0.25, 0xffff00, 0.0);
+				DrawingUtils.drawPoint(_draw, new Point(faceShape.translationX, faceShape.translationY), 2, false, 0x00ff00, 0.25);
+				*/
 				// We either have a result and show the 3D model,
 				_container3D.update(_brfManager.faceShape); 
 			} else {
@@ -151,10 +168,14 @@ package
 		/**
 		 * Click handler to change the model.
 		 */
-		public function onClickedVideo(event : MouseEvent) : void {
-			if(_currentModel == _model1) {
+		public function onClickedVideo(event : MouseEvent) : void 
+		{
+			if (_currentModel == _model1) 
+			{
 				_currentModel = _model2;
-			} else {
+			} 
+			else 
+			{
 				_currentModel = _model1;
 			}
 			_container3D.model = _currentModel;
