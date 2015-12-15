@@ -16,8 +16,8 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="..\..\Downloads\BRF_NXT_AS3_EXAMPLES\src" />
-    <class path="..\..\Downloads\BRF_NXT_AS3_EXAMPLES\src_3dengine_extensions" />
+    <class path="..\..\..\NXT_FACE_TRACK\BRF_NXT_AS3_EXAMPLES\src" />
+    <class path="..\..\..\NXT_FACE_TRACK\BRF_NXT_AS3_EXAMPLES\src_3dengine_extensions" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -54,10 +54,8 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <element path="lib\as3corelib.swc" />
-    <element path="lib\away3d-core-fp11_4_1_6.swc" />
-    <element path="lib\BRF_NXT_SWC_TK200215_v3.0.16_trial.swc" />
     <element path="lib\Flare3D_2.7.1_Trial.swc" />
+    <element path="lib\BRF_NXT_SWC_TK200215_v3.0.16_trial.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
