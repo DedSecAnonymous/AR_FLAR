@@ -82,6 +82,7 @@ package
 		 * and init all necessary stuff for Flare3D.
 		 */
 		override public function onReadyBRF(event : Event) : void {
+			trace("Main.as says : OVErride onReadyBRF of super (ExampleCandietracking) but calls super.onReady");
 			super.onReadyBRF(event);
 			
 			// visible webcam image

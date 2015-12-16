@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'12/14/2015'</value>
+      <value>'12/16/2015'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -32,20 +32,20 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\Users\harsh\Documents\BRF_Trial\src</path-element>
-      <path-element>C:\Users\harsh\Downloads\BRF_NXT_AS3_EXAMPLES\src</path-element>
-      <path-element>C:\Users\harsh\Downloads\BRF_NXT_AS3_EXAMPLES\src_3dengine_extensions</path-element>
+      <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\BRF_Trial\src</path-element>
+      <path-element>C:\Users\Admin\Documents\NXT_FACE_TRACK\BRF_NXT_AS3_EXAMPLES\src</path-element>
+      <path-element>C:\Users\Admin\Documents\NXT_FACE_TRACK\BRF_NXT_AS3_EXAMPLES\src_3dengine_extensions</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>C:\Users\harsh\Documents\BRF_Trial\lib\as3corelib.swc</path-element>
-      <path-element>C:\Users\harsh\Documents\BRF_Trial\lib\away3d-core-fp11_4_1_6.swc</path-element>
-      <path-element>C:\Users\harsh\Documents\BRF_Trial\lib\BRF_NXT_SWC_TK200215_v3.0.16_trial.swc</path-element>
-      <path-element>C:\Users\harsh\Documents\BRF_Trial\lib\Flare3D_2.7.1_Trial.swc</path-element>
+      <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\BRF_Trial\lib\Flare3D_2.7.1_Trial.swc</path-element>
+      <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\BRF_Trial\lib\BRF_NXT_SWC_TK200215_v3.0.16_trial.swc</path-element>
+      <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\BRF_Trial\lib\as3corelib.swc</path-element>
+      <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\BRF_Trial\lib\away3d-core-fp11_4_1_6.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Users\harsh\Documents\BRF_Trial\src\Main.as</path-element>
+    <path-element>C:\Users\Admin\Documents\GitHub\AR_FLAR\BRF_Trial\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
