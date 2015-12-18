@@ -47,18 +47,19 @@ package
 //			//
 //
 //			// set the viewport size and position
-//			_viewport = new Rectangle(0, 0, 640, 480);
+			_viewport = new Rectangle(0, 0, 640, 480);
 //			
 //			// and the other rectangles (see ExampleBase for more information)
-//			super(
-//				new Rectangle(  0,   0,  640, 480),	// Camera resolution
-//				new Rectangle(  0,   0,  640, 480), // BRF BitmapData size
-//				new Rectangle( 80,   0,  480, 480), // BRF region of interest within BRF BitmapData size
-//				new Rectangle(120,  40,  400, 400), // BRF face detection region of interest within BRF BitmapData size
-//				new Rectangle(  0,   0,  640, 480), // Shown video screen rectangle within the 3D scene
-//				true, true
-//			);
-			
+			super(
+				new Rectangle(  0,   0,  640, 480),	// Camera resolution
+				new Rectangle(  0,   0,  640, 480), // BRF BitmapData size
+			    new Rectangle( 80,   0,  480, 480), // BRF region of interest within BRF BitmapData size
+				new Rectangle(120,  40,  400, 400), // BRF face detection region of interest within BRF BitmapData size
+			    new Rectangle(  0,   0,  640, 480), // Shown video screen rectangle within the 3D scene
+				
+				true, true
+			);
+			/*
 			//
 			// 720p version
 			//
@@ -74,7 +75,7 @@ package
 				new Rectangle(120,  40,  400, 400), // BRF face detection region of interest within BRF BitmapData size
 				new Rectangle(  0,   0, 1280, 720), // Shown video screen rectangle within the 3D scene
 				true, true
-			);
+			); */
 		}
 		
 		/**
