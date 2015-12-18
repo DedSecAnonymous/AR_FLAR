@@ -42,7 +42,7 @@ package
 		// texture for webcam image as 3d plane
 		public var _screenBmd : BitmapData;
 		
-		[Embed(source = "logo_hack.png")]
+		/*[Embed(source = "logo_hack.png")]
 		private var logo:Class;
 		
 		private var logobmp:Bitmap = new logo();
@@ -53,9 +53,10 @@ package
 			graphics.drawRect(0, 0, 221, 196);
 			graphics.endFill();
 		}
+		*/
 		public function Main() 
 		{
-			/*
+			
 			//
 			// 480p version:
 			//
@@ -71,11 +72,11 @@ package
 				new Rectangle(  0,   0,  640, 480), // Shown video screen rectangle within the 3D scene
 				true, true
 			);
-			*/
+			
 			//
 			// 720p version
 			//
-			
+			/*
 			// set the viewport size and position
 			_viewport = new Rectangle(0, 0, 1280, 720);
 			
@@ -88,6 +89,7 @@ package
 				new Rectangle(  0,   0, 1280, 720), // Shown video screen rectangle within the 3D scene
 				true, true
 			);
+			*/
 		}
 		
 		/**
@@ -96,7 +98,7 @@ package
 		 */
 		override public function onReadyBRF(event : Event) : void 
 		{
-			hack();
+			//hack();
 			super.onReadyBRF(event);
 			
 			// visible webcam image
