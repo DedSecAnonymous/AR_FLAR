@@ -1,0 +1,138 @@
+<?xml version="1.0" ?><swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <compiler build="354143" name="ActionScript Compiler" version="2.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script mod="1409732090000" name="brf_next_logo_READY_black_png$d26f8c4956094b13061ef0df688f9b9a1736040093">
+        <def id="brf_next_logo_READY_black_png$d26f8c4956094b13061ef0df688f9b9a1736040093" />
+        <dep id="flash.display:Bitmap" type="i" />
+      </script>
+      <script mod="1409732090000" name="brf_next_logo_READY_png$68b96731e3534489b2b1d022bb949d46-878548195">
+        <def id="brf_next_logo_READY_png$68b96731e3534489b2b1d022bb949d46-878548195" />
+        <dep id="flash.display:Bitmap" type="i" />
+      </script>
+      <script mod="1409732090000" name="com/tastenkunst/as3/brf/nxt/BRFFaceShape">
+        <def id="com.tastenkunst.as3.brf.nxt:BRFFaceShape" />
+        <dep id="Number" type="s" />
+        <dep id="Object" type="i" />
+        <dep id="__AS3__.vec:Vector" type="s" />
+        <dep id="flash.geom:Point" type="s" />
+        <dep id="flash.geom:Rectangle" type="s" />
+        <dep id="int" type="s" />
+      </script>
+      <script mod="1410876359000" name="com/tastenkunst/as3/brf/nxt/BRFManager">
+        <def id="com.tastenkunst.as3.brf.nxt:BRFManager" />
+        <dep id="ArgumentError" type="e" />
+        <dep id="Boolean" type="s" />
+        <dep id="Class" type="s" />
+        <dep id="Error" type="e" />
+        <dep id="Function" type="s" />
+        <dep id="Number" type="s" />
+        <dep id="Object" type="s" />
+        <dep id="String" type="s" />
+        <dep id="__AS3__.vec:Vector" type="s" />
+        <dep id="com.tastenkunst.as3.brf.nxt:BRFFaceShape" type="s" />
+        <dep id="com.tastenkunst.as3.brf.nxt:IBeyondRealityFace" type="i" />
+        <dep id="com.tastenkunst.as3.brf.nxt.ane:BeyondRealityFaceLibrary" type="e" />
+        <dep id="flash.display:BitmapData" type="s" />
+        <dep id="flash.display:Stage" type="s" />
+        <dep id="flash.events:Event" type="s" />
+        <dep id="flash.events:EventDispatcher" type="i" />
+        <dep id="flash.events:TimerEvent" type="s" />
+        <dep id="flash.geom:Point" type="s" />
+        <dep id="flash.geom:Rectangle" type="s" />
+        <dep id="flash.utils:Timer" type="s" />
+        <dep id="int" type="s" />
+      </script>
+      <script mod="1409732090000" name="com/tastenkunst/as3/brf/nxt/BRFMode">
+        <def id="com.tastenkunst.as3.brf.nxt:BRFMode" />
+        <dep id="Object" type="i" />
+        <dep id="String" type="s" />
+      </script>
+      <script mod="1409732090000" name="com/tastenkunst/as3/brf/nxt/BRFState">
+        <def id="com.tastenkunst.as3.brf.nxt:BRFState" />
+        <dep id="Object" type="i" />
+        <dep id="String" type="s" />
+      </script>
+      <script mod="1410876359000" name="com/tastenkunst/as3/brf/nxt/IBeyondRealityFace">
+        <def id="com.tastenkunst.as3.brf.nxt:IBeyondRealityFace" />
+        <dep id="Boolean" type="s" />
+        <dep id="Number" type="s" />
+        <dep id="Object" type="s" />
+        <dep id="String" type="s" />
+        <dep id="__AS3__.vec:Vector" type="s" />
+        <dep id="com.tastenkunst.as3.brf.nxt:BRFFaceShape" type="s" />
+        <dep id="flash.display:BitmapData" type="s" />
+        <dep id="flash.display:Stage" type="s" />
+        <dep id="flash.events:IEventDispatcher" type="i" />
+        <dep id="flash.geom:Point" type="s" />
+        <dep id="flash.geom:Rectangle" type="s" />
+        <dep id="int" type="s" />
+      </script>
+      <script mod="1424359776000" name="com/tastenkunst/as3/brf/nxt/ane/final">
+        <def id="com.tastenkunst.as3.brf.nxt.ane:BeyondRealityFace" />
+        <dep id="ArgumentError" type="e" />
+        <dep id="Array" type="s" />
+        <dep id="Boolean" type="s" />
+        <dep id="Class" type="s" />
+        <dep id="Error" type="i" />
+        <dep id="Function" type="s" />
+        <dep id="Number" type="s" />
+        <dep id="Object" type="s" />
+        <dep id="String" type="s" />
+        <dep id="__AS3__.vec:Vector" type="s" />
+        <dep id="brf_next_logo_READY_black_png$d26f8c4956094b13061ef0df688f9b9a1736040093" type="e" />
+        <dep id="brf_next_logo_READY_png$68b96731e3534489b2b1d022bb949d46-878548195" type="e" />
+        <dep id="com.tastenkunst.as3.brf.nxt:BRFFaceShape" type="s" />
+        <dep id="com.tastenkunst.as3.brf.nxt:BRFMode" type="e" />
+        <dep id="com.tastenkunst.as3.brf.nxt:BRFState" type="e" />
+        <dep id="com.tastenkunst.as3.brf.nxt:IBeyondRealityFace" type="i" />
+        <dep id="flash.desktop:NativeApplication" type="e" />
+        <dep id="flash.display:Bitmap" type="i" />
+        <dep id="flash.display:BitmapData" type="s" />
+        <dep id="flash.display:DisplayObject" type="s" />
+        <dep id="flash.display:DisplayObjectContainer" type="e" />
+        <dep id="flash.display:Graphics" type="s" />
+        <dep id="flash.display:Shader" type="s" />
+        <dep id="flash.display:Sprite" type="i" />
+        <dep id="flash.display:Stage" type="s" />
+        <dep id="flash.events:Event" type="e" />
+        <dep id="flash.events:IOErrorEvent" type="e" />
+        <dep id="flash.events:MouseEvent" type="e" />
+        <dep id="flash.events:SecurityErrorEvent" type="e" />
+        <dep id="flash.events:StatusEvent" type="s" />
+        <dep id="flash.external:ExtensionContext" type="s" />
+        <dep id="flash.external:ExternalInterface" type="e" />
+        <dep id="flash.geom:Point" type="s" />
+        <dep id="flash.geom:Rectangle" type="s" />
+        <dep id="flash.geom:Transform" type="s" />
+        <dep id="flash.net:URLLoader" type="e" />
+        <dep id="flash.net:URLRequest" type="e" />
+        <dep id="flash.net:URLVariables" type="e" />
+        <dep id="flash.net:navigateToURL" type="e" />
+        <dep id="flash.system:Capabilities" type="e" />
+        <dep id="flash.utils:clearTimeout" type="e" />
+        <dep id="flash.utils:getTimer" type="e" />
+        <dep id="flash.utils:setTimeout" type="e" />
+        <dep id="int" type="s" />
+        <dep id="trace" type="e" />
+        <dep id="uint" type="e" />
+      </script>
+      <script mod="1409732090000" name="com/tastenkunst/as3/brf/nxt/ane/static">
+        <def id="com.tastenkunst.as3.brf.nxt.ane:BeyondRealityFaceLibrary" />
+        <dep id="Class" type="s" />
+        <dep id="com.tastenkunst.as3.brf.nxt:IBeyondRealityFace" type="e" />
+        <dep id="com.tastenkunst.as3.brf.nxt.ane:BeyondRealityFace" type="e" />
+        <dep id="flash.display:Sprite" type="i" />
+      </script>
+      <digests>
+        <digest signed="false" type="SHA-256" value="b4083110d7cf5de0aaaec4d19b3c27fa3ffe34220c112f4356710d9e44c38043" />
+      </digests>
+    </library>
+  </libraries>
+</swc>

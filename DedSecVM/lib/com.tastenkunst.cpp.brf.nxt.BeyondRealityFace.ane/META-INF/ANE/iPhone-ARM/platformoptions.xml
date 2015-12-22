@@ -1,0 +1,19 @@
+<platform xmlns="http://ns.adobe.com/air/extension/16.0"> 
+    <description>Beyond Reality Face Nxt SDK - Adobe AIR Native Extension</description>
+    <copyright>Tastenkunst GmbH, 2015</copyright>
+	<sdkVersion>7.0</sdkVersion>
+    <linkerOptions> 
+        <option>-ios_version_min 7.0</option>
+        <option>-F/usr/lib/</option>
+        <!-- to link with the libiconv.dylib -->
+        <option>-liconv</option>
+        <option>-lc++</option>
+        <!-- <option>-framework CoreTelephony</option>
+        <option>-framework EventKit</option>
+        <option>-framework MediaPlayer</option>
+        <option>-framework MessageUI</option>
+        <option>-framework SystemConfiguration</option>
+        <option>-framework AdSupport</option>
+        <option>-framework opencv2</option> -->
+    </linkerOptions> 
+</platform>

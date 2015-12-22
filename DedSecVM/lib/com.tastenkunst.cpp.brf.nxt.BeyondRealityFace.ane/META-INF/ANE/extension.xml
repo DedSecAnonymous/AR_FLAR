@@ -1,0 +1,30 @@
+<extension xmlns="http://ns.adobe.com/air/extension/16.0">
+	<id>com.tastenkunst.cpp.brf.nxt.BeyondRealityFace</id>
+	<versionNumber>3.0.15</versionNumber>
+	<platforms>
+		<platform name="default"> 
+			<applicationDeployment/> 
+		</platform>
+        <platform name="Android-ARM">
+			<applicationDeployment>
+				<nativeLibrary>libBeyondRealityFaceNxt.so</nativeLibrary>
+				<initializer>BeyondRealityFaceExtInitializer</initializer>
+				<finalizer>BeyondRealityFaceExtFinalizer</finalizer>
+			</applicationDeployment>
+		</platform>
+		<platform name="Android-x86">  
+			<applicationDeployment>
+				<nativeLibrary>libBeyondRealityFaceNxt.so</nativeLibrary>
+				<initializer>BeyondRealityFaceExtInitializer</initializer>
+				<finalizer>BeyondRealityFaceExtFinalizer</finalizer>
+			</applicationDeployment>  
+		</platform>
+		<platform name="iPhone-ARM"> 
+            <applicationDeployment> 
+                <nativeLibrary>libBeyondRealityFaceNxt.a</nativeLibrary> 
+                <initializer>BeyondRealityFaceExtInitializer</initializer>
+        		<finalizer>BeyondRealityFaceExtFinalizer</finalizer>
+            </applicationDeployment> 
+        </platform>
+	</platforms>
+</extension>
