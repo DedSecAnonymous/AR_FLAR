@@ -3,11 +3,17 @@ package
 	import com.tastenkunst.as3.brf.nxt.BRFState;
 	import com.tastenkunst.as3.brf.nxt.containers.Flare3D_v2_7;
 	import com.tastenkunst.as3.brf.nxt.examples.ExampleCandideTracking;
+	import flash.sampler.NewObjectSample;
 
 	import flash.display.BitmapData;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
+	import flash.display.Sprite;
+	import flash.display.Loader;
+	import flash.net.URLLoader;
+    import flash.net.URLRequest;
+    import flash.net.URLLoaderDataFormat;
 	
 	/**
 	 * This is a basic Flare3D example with 2 3D models of glasses
@@ -32,6 +38,8 @@ package
 		public var _model2 : String = "media/f3d/model_7_1669.zf3d";
 		// current model
 		public var _currentModel : String;
+		
+	    public var _slide: Sprite;
 		// 3D scene handler
 		public var _container3D : Flare3D_v2_7;
 		
@@ -40,6 +48,12 @@ package
 		
 		// texture for webcam image as 3d plane
 		public var _screenBmd : BitmapData;
+		
+		public var pre:String = "1.png";
+		
+		public var loader:Loader = new Loader();
+		public var prev:Loader = new Loader();
+		
 
 		public function Main() {
 //			//
@@ -48,6 +62,9 @@ package
 //
 //			// set the viewport size and position
 			_viewport = new Rectangle(0, 0, 640, 480);
+			_slide = new Sprite();
+			
+			
 //			
 //			// and the other rectangles (see ExampleBase for more information)
 			super(
@@ -59,6 +76,9 @@ package
 				
 				true, true
 			);
+			
+			_slide.graphics.beginFill(0x0000FF);
+			
 			/*
 			//
 			// 720p version
@@ -86,6 +106,18 @@ package
 			trace("Main.as says : OVErride onReadyBRF of super (ExampleCandietracking) but calls super.onReady");
 			super.onReadyBRF(event);
 			
+			
+		    var loader:Loader = new Loader();
+			var prev:Loader = new Loader();
+			//var next:Loader = new Loader();
+			this.addChild(loader);
+            this.addChild(prev);
+			loader.x=520;
+            loader.y = 120;
+			prev.x = 520;
+			prev.y = 0;
+			//loader.contentLoaderInfo.addEventListener(Event.COMPLETE,doneLoad);
+			
 			// visible webcam image
 			// on mobile: uploading large textures is slow, also drawing a video to large BitmapData is slow
 			// so we make the shown video smaller in size if necessary: eg. 0.5
@@ -110,7 +142,22 @@ package
 			_clickArea.buttonMode = true;
 			_clickArea.useHandCursor = true;
 			_clickArea.mouseChildren = false;
-			_clickArea.addEventListener(MouseEvent.CLICK, onClickedVideo);
+			_clickArea.addEventListener(MouseEvent.CLICK, doLoad);
+			
+			function doLoad(e:MouseEvent):void {
+			loader.load(new URLRequest(pre));
+			prev.load(new URLRequest("2.png"));
+			_clickArea.addEventListener(MouseEvent.CLICK,onClickedVideo);
+			_clickArea.visible=true;
+			}
+			
+			/*
+			function doneLoad(e:Event):void {
+				loader.contentLoaderInfo.removeEventListener(Event.COMPLETE,doneLoad);
+				
+				}
+				
+				*/
 			
 			// remove the video or brf bitmap, if its on stage, because Stage3D sits
 			// below the display list.
@@ -154,10 +201,14 @@ package
 		 * Click handler to change the model.
 		 */
 		public function onClickedVideo(event : MouseEvent) : void {
-			if(_currentModel == _model1) {
+			if (_currentModel == _model1) {
+				//loader.load(new URLRequest(pre));
+				//_clickArea.visible=true;
+				pre = "2.png";
 				_currentModel = _model2;
 			} else {
 				_currentModel = _model1;
+				pre = "1.png";
 			}
 			_container3D.model = _currentModel;
 		}
