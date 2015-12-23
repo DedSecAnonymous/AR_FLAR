@@ -33,11 +33,14 @@ package
 		// the occlusion head model, that hides the bows of the glasses
 		public var _occlusionModel : String = "media/f3d/brf_occlusion_head.zf3d";
 		// first example glasses model
-		public var _model1 : String = "media/f3d/model_1_1495.zf3d";
+		/*public var _model1 : String = "media/f3d/model_1_1495.zf3d";
 		// second example glasses model
-		public var _model2 : String = "media/f3d/model_7_1669.zf3d";
+		public var _model2 : String = "media/f3d/model_7_1669.zf3d";*/
 		// current model
 		public var _currentModel : String;
+		
+		//Model location array
+		public var model:Array = ["media/f3d/model_1_1495.zf3d","media/f3d/model_7_1669.zf3d","media/f3d/gen.zf3d"];
 		
 	    public var _slide: Sprite;
 		// 3D scene handler
@@ -49,11 +52,16 @@ package
 		// texture for webcam image as 3d plane
 		public var _screenBmd : BitmapData;
 		
-		public var pre:String = "1.png";
-		public var _pre:String = "2.png";
+		/*public var cur:String = "1.png";
+		public var pre:String = "2.png";
+		public var nxt:String = "3.png";*/
+		
+		//Array of model names
+		public var mod:Array = ["1.png","2.png","3.png"];
 		
 		public var loader:Loader = new Loader();
 		public var prev:Loader = new Loader();
+		public var next:Loader = new Loader();
 		
 
 		public function Main() {
@@ -110,13 +118,17 @@ package
 			
 		    var loader:Loader = new Loader();
 			var prev:Loader = new Loader();
+			var next:Loader = new Loader();
 			//var next:Loader = new Loader();
 			this.addChild(loader);
             this.addChild(prev);
+			this.addChild(next);
 			loader.x=520;
             loader.y = 120;
 			prev.x = 520;
 			prev.y = 0;
+			next.x = 520;
+			next.y = 240;
 			//loader.contentLoaderInfo.addEventListener(Event.COMPLETE,doneLoad);
 			
 			// visible webcam image
@@ -136,7 +148,7 @@ package
 			_container3D.initOcclusion(_occlusionModel);
 			
 			// set the first model
-			_currentModel = _model1;
+			_currentModel = model[1];
 			_container3D.model = _currentModel;
 			
 			// add a stage filling button to change the model
@@ -147,11 +159,11 @@ package
 			
 			function doLoad(e:MouseEvent):void 
 			{
-				loader.load(new URLRequest(pre));
-				prev.load(new URLRequest(_pre));
-
-			_clickArea.addEventListener(MouseEvent.CLICK,onClickedVideo);
-			_clickArea.visible=true;
+				loader.load(new URLRequest(mod[1]));
+				prev.load(new URLRequest(mod[0]));
+				next.load(new URLRequest(mod[2]));
+				_clickArea.addEventListener(MouseEvent.CLICK,onClickedVideo);
+				_clickArea.visible=true;
 			}
 			
 			/*
@@ -164,7 +176,8 @@ package
 			
 			// remove the video or brf bitmap, if its on stage, because Stage3D sits
 			// below the display list.
-			if(_container.contains(_video)) {
+			if (_container.contains(_video)) 
+			{
 				_container.removeChild(_video);
 			}
 		}
@@ -203,7 +216,7 @@ package
 		/**
 		 * Click handler to change the model.
 		 */
-		public function onClickedVideo(event : MouseEvent) : void {
+		/*public function onClickedVideo(event : MouseEvent) : void {
 			if (_currentModel == _model1) {
 				//loader.load(new URLRequest(pre));
 				//_clickArea.visible=true;
@@ -221,6 +234,34 @@ package
 				
 			}
 			_container3D.model = _currentModel;
-		}
+		}*/
+			public function onClickedVideo(event:MouseEvent):void
+			{
+				if (_currentModel == model[1])
+				{
+					_currentModel = model[2];
+					var temp:String = mod[0];
+					mod[0] = mod[1];
+					mod[1] = mod[2];
+					mod[2] = temp;
+				}
+				else if (_currentModel == model[0])
+				{
+					_currentModel = model[1];
+					temp = mod[2];
+					mod[2] = mod[0];
+					mod[0] = mod[1];
+					mod[1] = temp;
+				}
+				else
+				{
+					_currentModel = model[0];
+					temp = mod[1];
+					mod[1] = mod[2];
+					mod[2] = mod[0];
+					mod[0] = temp;
+				}
+				_container3D.model = _currentModel;
+			}
 	}
 }
