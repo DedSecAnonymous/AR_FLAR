@@ -50,6 +50,7 @@ package
 		public var _screenBmd : BitmapData;
 		
 		public var pre:String = "1.png";
+		public var _pre:String = "2.png";
 		
 		public var loader:Loader = new Loader();
 		public var prev:Loader = new Loader();
@@ -144,9 +145,11 @@ package
 			_clickArea.mouseChildren = false;
 			_clickArea.addEventListener(MouseEvent.CLICK, doLoad);
 			
-			function doLoad(e:MouseEvent):void {
-			loader.load(new URLRequest(pre));
-			prev.load(new URLRequest("2.png"));
+			function doLoad(e:MouseEvent):void 
+			{
+				loader.load(new URLRequest(pre));
+				prev.load(new URLRequest(_pre));
+
 			_clickArea.addEventListener(MouseEvent.CLICK,onClickedVideo);
 			_clickArea.visible=true;
 			}
@@ -204,11 +207,18 @@ package
 			if (_currentModel == _model1) {
 				//loader.load(new URLRequest(pre));
 				//_clickArea.visible=true;
-				pre = "2.png";
+				var temp:String = pre;
+				pre = _pre;
+				_pre = temp;
+				
 				_currentModel = _model2;
-			} else {
+			} else 
+			{
+				temp = pre;
+				pre = _pre;
+				_pre = temp;
 				_currentModel = _model1;
-				pre = "1.png";
+				
 			}
 			_container3D.model = _currentModel;
 		}
