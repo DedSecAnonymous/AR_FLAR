@@ -27,11 +27,7 @@ package
 	import org.papervision3d.view.Viewport3D;
 	import org.papervision3d.objects.parsers.Collada;
     import org.papervision3d.objects.parsers.DAE;
-<<<<<<< HEAD
 	import org.papervision3d.view.BasicView;
-	
-=======
->>>>>>> 648769f3572806052d3e9801b4616682138a1d12
 	
 
 	
@@ -151,13 +147,13 @@ package
 			dae = new DAE();
 			dae.load("expermnt_dae.dae");
 			dae.scale = 0.85;
-			dae.rotationZ -= 180;
+			/*dae.rotationZ -= 270;
 			dae.rotationX += 90;
-			dae.rotationY -= 100;
-			dae.x = -75;
-			dae.y = 60;
+			dae.rotationY += 180;
+			dae.x = -25;
+			dae.y = 30;
 			//dae.rotationZ -= 180;
-			container.addChild(dae);
+			container.addChild(dae);*/
 		
             
 

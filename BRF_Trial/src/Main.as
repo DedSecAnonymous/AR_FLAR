@@ -21,7 +21,8 @@ package
 	 * as the 2D examples to place the video and results in its
 	 * viewport, so no need to calculate anything for you :)
 	 * 
-	 * @author Marcel Klammer, Tastenkunst GmbH, 2014
+	 * @author Harsh Patel
+	 * @author Mohit Kumar
 	 */
 	public class Main extends ExampleCandideTracking {
 		
@@ -42,7 +43,11 @@ package
 		// texture for webcam image as 3d plane
 		public var _screenBmd : BitmapData;
 		
-		/*[Embed(source = "logo_hack.png")]
+		//Adding preview images
+		//public var pre:String = "assets/glass.jpg";
+		
+		
+		[Embed(source = "glass.jpg")]
 		private var logo:Class;
 		
 		private var logobmp:Bitmap = new logo();
@@ -50,10 +55,10 @@ package
 		private function hack():void
 		{
 			graphics.beginBitmapFill(logobmp.bitmapData);
-			graphics.drawRect(0, 0, 221, 196);
+			graphics.drawRect(0, 0, 150, 78);
 			graphics.endFill();
 		}
-		*/
+		
 		public function Main() 
 		{
 			
@@ -126,6 +131,9 @@ package
 			_clickArea.useHandCursor = true;
 			_clickArea.mouseChildren = false;
 			_clickArea.addEventListener(MouseEvent.CLICK, onClickedVideo);
+			
+			//Displaying Images
+			//addChild(pre);
 			
 			// remove the video or brf bitmap, if its on stage, because Stage3D sits
 			// below the display list.
